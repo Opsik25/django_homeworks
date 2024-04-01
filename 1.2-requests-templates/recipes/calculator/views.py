@@ -20,19 +20,13 @@ DATA = {
 
 
 def recipe(request, dish):
-    try:
+    if dish in DATA:
         servings = int(request.GET.get('servings', 1))
-        if servings != 1:
-            context = {
+        context = {
                 'recipe': {key: value * servings for key, value in DATA.get(dish).items()}
             }
-        else:
-            context = {
-                'recipe': DATA.get(dish)
-            }
-        return render(request, 'calculator/index.html', context)
-    except AttributeError:
+    else:
         context = {
             'recipe': None
         }
-        return render(request, 'calculator/index.html', context)
+    return render(request, 'calculator/index.html', context)
