@@ -14,5 +14,5 @@ class Order(models.Model):
     user_name = models.CharField(max_length=200, verbose_name='ФИО')
     days_count = models.PositiveSmallIntegerField(default=1, verbose_name='Количество дней заказа')
     date = models.DateField(auto_now_add=True, verbose_name='Дата')
-    books = models.ManyToManyField(Book)
+    books = models.ManyToManyField(Book, verbose_name='Корзина', related_name='books')
 

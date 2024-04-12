@@ -7,7 +7,7 @@ POST {{baseUrl}}/books/create/
 Content-Type: application/json
 
 {
-  "author": "Николай Васильевич Гоголь",
+  "author": "Гоголь",
   "title": "Мёртвые души",
   "year": 1843
 }
@@ -61,7 +61,7 @@ Content-Type: application/json
 ###
 
 # получение одного заказа
-GET {{baseUrl}}/orders/1/
+GET {{baseUrl}}/orders/4/
 Content-Type: application/json
 
 ###
